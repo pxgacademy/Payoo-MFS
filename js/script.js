@@ -191,6 +191,7 @@ const getBonusFunc = () => {
   const coupon = getInputValueById("couponInput");
   if (coupon !== "Bonus") {
     alert('Invalid coupon. Coupon is "Bonus"');
+    return;
   }
 
   const previousBalance = mainBalance.innerText;
