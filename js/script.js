@@ -112,8 +112,6 @@ const cashOutFunc = () => {
   li.classList = "bg-red-300 p-3 rounded-lg mb-3";
   transactionList.appendChild(li);
 
-
-
   document.getElementById("cashOutAgentNo").value = "";
   document.getElementById("cashOutAmount").value = "";
   document.getElementById("cashOutPin").value = "";
@@ -183,7 +181,6 @@ const getBonusSubmit = getInputById("getBonusSubmit");
 getBonusSubmit.addEventListener("click", (e) => {
   e.preventDefault();
   getBonusFunc();
-  getBonusSubmit.disabled = true;
 });
 
 const getBonusFunc = () => {
@@ -195,14 +192,15 @@ const getBonusFunc = () => {
   }
 
   const previousBalance = mainBalance.innerText;
-  const bonus = parseFloat(mainBalance.innerText) * 0.05;
+  let bonus = parseFloat(mainBalance.innerText) * 0.05;
+  bonus = bonus.toFixed(2);
 
   mainBalance.innerText = parseFloat(mainBalance.innerText) + bonus;
 
   // Append child element in coupon area
   const couponList = getInputById("couponList");
   const liC = document.createElement("li");
-  liC.innerHTML = `Congratulations! You got ${bonus} taka bonus`;
+  liC.innerHTML = `Congratulations! <br />You got ${bonus} taka bonus`;
   liC.classList = "mt-4 text-lg text-orange-600";
   couponList.appendChild(liC);
 
@@ -217,6 +215,8 @@ const getBonusFunc = () => {
     <span>Coupon is: ${coupon}</span>`;
   li.classList = "bg-green-300 p-3 rounded-lg mb-3";
   transactionList.appendChild(li);
+
+  getBonusSubmit.disabled = true;
 };
 
 // Pay Bill
