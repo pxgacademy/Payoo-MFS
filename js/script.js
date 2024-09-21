@@ -53,6 +53,11 @@ const addMoneyFunc = () => {
     <span>Account No: ${addMoneyBankNo}</span>`;
   li.classList = "bg-green-300 p-3 rounded-lg mb-3";
   transactionList.appendChild(li);
+
+  document.getElementById("addMoneyBank").value = "selectOne";
+  document.getElementById("addMoneyBankNo").value = "";
+  document.getElementById("addMoneyAmount").value = "";
+  document.getElementById("addMoneyPin").value = "";
 };
 
 // Cash out
@@ -106,6 +111,12 @@ const cashOutFunc = () => {
     <span>Agent Number: ${cashOutAgentNo}</span>`;
   li.classList = "bg-red-300 p-3 rounded-lg mb-3";
   transactionList.appendChild(li);
+
+
+
+  document.getElementById("cashOutAgentNo").value = "";
+  document.getElementById("cashOutAmount").value = "";
+  document.getElementById("cashOutPin").value = "";
 };
 
 //
@@ -160,6 +171,10 @@ const transferMoneyFunc = () => {
     <span>Agent Number: ${transferMoneyAgentNo}</span>`;
   li.classList = "bg-red-300 p-3 rounded-lg mb-3";
   transactionList.appendChild(li);
+
+  document.getElementById("transferMoneyAgentNo").value = "";
+  document.getElementById("transferMoneyAmount").value = "";
+  document.getElementById("transferMoneyPin").value = "";
 };
 
 //
@@ -168,6 +183,7 @@ const getBonusSubmit = getInputById("getBonusSubmit");
 getBonusSubmit.addEventListener("click", (e) => {
   e.preventDefault();
   getBonusFunc();
+  getBonusSubmit.disabled = true;
 });
 
 const getBonusFunc = () => {
@@ -193,7 +209,7 @@ const getBonusFunc = () => {
   const transactionList = getInputById("transactionList");
   const li = document.createElement("li");
   li.innerHTML = `
-    <span class="font-bold">Transfer Money</span> <br />
+    <span class="font-bold">Bonus</span> <br />
     <span>Previous Balance: ${previousBalance}</span> <br />
     <span>Got bonus: ${bonus}</span> <br />
     <span>New Balance: ${mainBalance.innerText}</span> <br />
@@ -201,7 +217,6 @@ const getBonusFunc = () => {
   li.classList = "bg-green-300 p-3 rounded-lg mb-3";
   transactionList.appendChild(li);
 };
-
 
 // Pay Bill
 const payBillSubmit = getInputById("payBillSubmit");
@@ -256,4 +271,9 @@ const payBillFunc = () => {
     <span>Account No: ${payBillBankNo}</span>`;
   li.classList = "bg-red-300 p-3 rounded-lg mb-3";
   transactionList.appendChild(li);
+
+  document.getElementById("payBillBank").value = "selectOne";
+  document.getElementById("payBillBankNo").value = "";
+  document.getElementById("payBillAmount").value = "";
+  document.getElementById("payBillPin").value = "";
 };
