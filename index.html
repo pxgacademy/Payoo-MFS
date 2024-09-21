@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Website</title>
+    <!-- CSS raw file -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!-- Google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/ce74b8a1bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tailwindcss cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisyUI cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <!-- body started here -->
+  <body class="font-manrope w-full">
+    <main class="max-w-[450px] mx-auto bg-[#E6E6E6] rounded-b-2xl pb-4">
+      <!-- Login page -->
+      <section
+        id="loginSection"
+        class="w-full h-screen flex items-center justify-center"
+      >
+        <div>
+          <img class="mb-5" src="./icons/logo-bg.png" alt="" />
+          <form action="" class="flex flex-col gap-2 p-4 rounded-lg">
+            <label for="" class="ml-4 text-xl">Mobile Number</label>
+            <input
+              type="text"
+              id="login-mobile-number"
+              autocomplete="off"
+              required
+              placeholder="Enter your number"
+              class="p-4 rounded-lg outline-none border-none"
+            />
+            <label for="" class="ml-4 text-xl">4 Digit Pin</label>
+            <input
+              type="password"
+              id="login-pin"
+              placeholder="Enter 4 digit pin"
+              required
+              autocomplete="off"
+              class="p-4 rounded-lg outline-none border-none"
+            />
+            <button
+              id="login-button"
+              class="bg-blue-600 p-4 rounded-full text-white text-2xl font-bold mt-4"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        id="defaultDisplay"
+        class="hidden bg-white px-5 pb-4 rounded-b-2xl"
+      >
+        <div>
+          <!-- top section -->
+          <div class="flex items-center gap-3 border-b-2 border-gray-300 py-3">
+            <img class="w-[15%]" src="./icons/logo.png" alt="" />
+            <div class="flex-grow">
+              <div class="flex items-center gap-1 text-2xl font-bold">
+                <span><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>
+                <p id="mainBalance" class="">34542</p>
+              </div>
+              <p class="text-gray-500">Available Balance</p>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-500 py-2 px-4 rounded-lg"
+            >
+              <i class="fa-solid fa-right-from-bracket rotate-180 mr-1"></i>
+              Log Out
+            </button>
+          </div>
+
+          <!-- Title -->
+          <div id="title">
+            <h3 class="text-2xl font-bold mt-2">💝 Welcome to Payooo!</h3>
+            <p class="text-gray-500 mt-2">
+              Enjoy easy and convenient financial services with us. CashOut
+              charge is low and
+            </p>
+          </div>
+
+          <!-- Options -->
+          <div class="grid grid-cols-3 gap-4 mt-5">
+            <!-- card one -->
+            <div
+              id="addMoneyBtn"
+              class="card w-full p-5 border border-gray-400 flex flex-col justify-center items-center gap-3 cursor-pointer"
+            >
+              <img src="./icons/wallet.png" alt="" />
+              <p class="text-sm text-gray-600">Add Money</p>
+            </div>
+            <!-- card two -->
+            <div
+              id="cashoutBtn"
+              class="card w-full p-5 border border-gray-400 flex flex-col justify-center items-center gap-3 cursor-pointer"
+            >
+              <img src="./icons/send.png" alt="" />
+              <p class="text-sm text-gray-600">Cashout</p>
+            </div>
+            <!-- card three -->
+            <div
+              id="transferMoneyBtn"
+              class="card w-full py-5 border border-gray-400 flex flex-col justify-center items-center gap-3 cursor-pointer"
+            >
+              <img src="./icons/money.png" alt="" />
+              <p class="text-sm text-gray-600">Transfer Money</p>
+            </div>
+            <!-- card four -->
+            <div
+              id="getBonusBtn"
+              class="card w-full p-5 border border-gray-400 flex flex-col justify-center items-center gap-3 cursor-pointer"
+            >
+              <img src="./icons/financial.png" alt="" />
+              <p class="text-sm text-gray-600">Get Bonus</p>
+            </div>
+            <!-- card five -->
+            <div
+              id="payBillBtn"
+              class="card w-full p-5 border border-gray-400 flex flex-col justify-center items-center gap-3 cursor-pointer"
+            >
+              <img src="./icons/purse.png" alt="" />
+              <p class="text-sm text-gray-600">Pay Bill</p>
+            </div>
+            <!-- card six -->
+            <div
+              id="transactionBtn"
+              class="card w-full py-5 border border-gray-400 flex flex-col justify-center items-center gap-3 cursor-pointer"
+            >
+              <img src="./icons/transaction.png" alt="" />
+              <p class="text-sm text-gray-600">Transactions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="latestPayment" class="hidden px-5 py-4">
+        <div class="flex items-center">
+          <p class="flex-grow text-xl font-bold">Latest Payment</p>
+          <p class="text-gray-500">View All</p>
+        </div>
+        <div class="cards space-y-5 mt-4">
+          <!-- card -->
+          <div
+            class="flex items-center gap-3 bg-white py-2 px-4 rounded-lg border border-gray-300"
+          >
+            <div class="bg-gray-300 rounded-full p-2">
+              <img src="./icons/wallet.png" alt="" />
+            </div>
+            <div class="flex-grow">
+              <p class="text-lg font-bold">Electricity Bill</p>
+              <p class="text-sm text-gray-500">Today 01:44 AM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <!-- card -->
+          <div
+            class="flex items-center gap-3 bg-white py-2 px-4 rounded-lg border border-gray-300"
+          >
+            <div class="bg-gray-300 rounded-full p-2">
+              <img src="./icons/wallet.png" alt="" />
+            </div>
+            <div class="flex-grow">
+              <p class="text-lg font-bold">Bank Deposit</p>
+              <p class="text-sm text-gray-500">Today 01:44 AM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <!-- card -->
+          <div
+            class="flex items-center gap-3 bg-white py-2 px-4 rounded-lg border border-gray-300"
+          >
+            <div class="bg-gray-300 rounded-full p-2">
+              <img src="./icons/wallet.png" alt="" />
+            </div>
+            <div class="flex-grow">
+              <p class="text-lg font-bold">Mobile Recharge</p>
+              <p class="text-sm text-gray-500">Today 01:44 AM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <!-- card -->
+          <div
+            class="flex items-center gap-3 bg-white py-2 px-4 rounded-lg border border-gray-300"
+          >
+            <div class="bg-gray-300 rounded-full p-2">
+              <img src="./icons/wallet.png" alt="" />
+            </div>
+            <div class="flex-grow">
+              <p class="text-lg font-bold">Gas Bill</p>
+              <p class="text-sm text-gray-500">Today 01:44 AM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Money -->
+      <section id="addMoney" class="hidden px-5 py-4">
+        <p class="flex-grow text-xl font-bold">Add Money</p>
+        <form
+          action=""
+          class="flex flex-col gap-1 mt-4 bg-white p-4 rounded-xl"
+        >
+          <label for="">Select A Bank</label>
+          <select
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full border border-gray-300"
+            name="bankName"
+            id="addMoneyBank"
+            required
+          >
+            <option class="hidden" value="selectOne">Select Bank</option>
+            <option value="Islami Bank">Islami Bank</option>
+            <option value="IFIC Bank">IFIC Bank</option>
+            <option value="Eastern Bank">Eastern Bank</option>
+            <option value="Brack Bank">Brack Bank</option>
+          </select>
+          <label class="mt-3" for="">Bank Account Number</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="number"
+            name=""
+            id="addMoneyBankNo"
+            placeholder="Enter 11 digit account number"
+            required
+          />
+          <label class="mt-3" for="">Amount to Add</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="number"
+            name=""
+            id="addMoneyAmount"
+            placeholder="Add amount to withdraw"
+            required
+          />
+          <label class="mt-3" for="">Pin Number</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="password"
+            name=""
+            id="addMoneyPin"
+            placeholder="Enter 4 digit pin number"
+            required
+          />
+          <input
+            id="addMoneySubmit"
+            class="bg-blue-600 mt-5 cursor-pointer text-lg font-bold text-white py-3 px-4 rounded-full"
+            type="submit"
+            value="Add Money"
+          />
+        </form>
+      </section>
+
+      <!-- Cash Out -->
+      <section id="cashOut" class="hidden px-5 py-4">
+        <p class="flex-grow text-xl font-bold">Cash Out</p>
+        <form
+          action=""
+          class="flex flex-col gap-1 mt-4 bg-white p-4 rounded-xl"
+        >
+          <label class="mt-3" for="">Agent Number</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="number"
+            name=""
+            id="cashOutAgentNo"
+            placeholder="Enter agent number"
+          />
+          <label class="mt-3" for="">Amount to Add</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="number"
+            name=""
+            id="cashOutAmount"
+            placeholder="Add amount to withdraw"
+          />
+          <label class="mt-3" for="">Pin Number</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="password"
+            name=""
+            id="cashOutPin"
+            placeholder="Enter 4 digit pin number"
+          />
+          <input
+            class="bg-blue-600 mt-5 cursor-pointer text-lg font-bold text-white py-3 px-4 rounded-full"
+            type="submit"
+            value="Withdraw Money"
+            id="WithdrawMoneySubmit"
+          />
+        </form>
+      </section>
+
+      <!-- Transfer Money -->
+      <section id="transferMoney" class="hidden px-5 py-4">
+        <p class="flex-grow text-xl font-bold">Transfer Money</p>
+        <form
+          action=""
+          class="flex flex-col gap-1 mt-4 bg-white p-4 rounded-xl"
+        >
+          <label class="mt-3" for="">Agent Number</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="number"
+            name=""
+            id="transferMoneyAgentNo"
+            placeholder="Enter agent number"
+          />
+          <label class="mt-3" for="">Amount to Add</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="number"
+            name=""
+            id="transferMoneyAmount"
+            placeholder="Add amount to withdraw"
+          />
+          <label class="mt-3" for="">Pin Number</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="password"
+            name=""
+            id="transferMoneyPin"
+            placeholder="Enter 4 digit pin number"
+          />
+          <input
+            class="bg-blue-600 mt-5 cursor-pointer text-lg font-bold text-white py-3 px-4 rounded-full"
+            type="submit"
+            value="Send Now"
+            id="transferMoneySubmit"
+          />
+        </form>
+      </section>
+
+      <!-- Get Bonus -->
+      <section id="getBonus" class="hidden px-5 py-4">
+        <p class="flex-grow text-xl font-bold">Get Bonus</p>
+        <form
+          action=""
+          class="flex flex-col gap-1 mt-4 bg-white p-4 rounded-xl"
+        >
+          <label class="mt-3" for="">Enter Bonus Coupon</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="text"
+            name=""
+            id="couponInput"
+            placeholder="Enter your coupon"
+          />
+          <ul id="couponList">
+            <!-- <li class="mt-4 text-lg font-bold">You got 20.5 taka bonus</li> -->
+          </ul>
+          <input
+            class="bg-blue-600 mt-5 cursor-pointer text-lg font-bold text-white py-3 px-4 rounded-full"
+            type="submit"
+            value="Get Bonus"
+            id="getBonusSubmit"
+          />
+        </form>
+      </section>
+
+      <!-- Pay Bill -->
+      <section id="payBill" class="hidden px-5 py-4">
+        <p class="flex-grow text-xl font-bold">Pay Bill</p>
+        <form
+          action=""
+          class="flex flex-col gap-1 mt-4 bg-white p-4 rounded-xl"
+        >
+          <label for="">Select A Bank</label>
+          <select
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full border border-gray-300"
+            name="bankName"
+            id="payBillBank"
+          >
+            <option class="hidden" value="selectOne">Select Bank</option>
+            <option value="islamiBank">Islami Bank</option>
+            <option value="ificBank">IFIC Bank</option>
+            <option value="easternBank">Eastern Bank</option>
+            <option value="brackBank">Brack Bank</option>
+          </select>
+          <label class="mt-3" for="">Bank Account Number</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="number"
+            name=""
+            id="payBillBankNo"
+            placeholder="Enter 11 digit account number"
+          />
+          <label class="mt-3" for="">Amount to Add</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="number"
+            name=""
+            id="payBillAmount"
+            placeholder="Add amount to withdraw"
+          />
+          <label class="mt-3" for="">Pin Number</label>
+          <input
+            class="bg-[#E6E6E6] py-3 px-4 rounded-full overflow-hidden outline-none border border-gray-300"
+            type="password"
+            name=""
+            id="payBillPin"
+            placeholder="Enter 4 digit pin number"
+          />
+          <input
+            class="bg-blue-600 mt-5 cursor-pointer text-lg font-bold text-white py-3 px-4 rounded-full"
+            type="submit"
+            value="Pay Now"
+            id="payBillSubmit"
+          />
+        </form>
+      </section>
+
+      <!-- Transactions -->
+      <section id="transaction" class="hidden px-5 py-4">
+        <p class="flex-grow text-xl font-bold">Transactions</p>
+
+        <ul id="transactionList" class="mt-5"></ul>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="./js/utilities.js"></script>
+    <script src="./js/design.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
