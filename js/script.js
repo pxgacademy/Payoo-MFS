@@ -193,7 +193,7 @@ const getBonusFunc = () => {
 
   const previousBalance = mainBalance.innerText;
   let bonus = parseFloat(mainBalance.innerText) * 0.05;
-  bonus = bonus.toFixed(2);
+  bonus = parseFloat(bonus.toFixed(2));
 
   mainBalance.innerText = parseFloat(mainBalance.innerText) + bonus;
 
